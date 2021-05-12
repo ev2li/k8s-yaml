@@ -1,0 +1,14 @@
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata: 
+  name: jenkins
+  namespace: infra
+spec:
+  rules:
+  - host: jenkins.od.com
+    http:
+      paths:
+      - path: /
+        backend: 
+          serviceName: jenkins
+          servicePort: 80
